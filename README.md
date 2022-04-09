@@ -2,23 +2,23 @@
 
 This is a PiHole DNS server in a docker container that I can use on my home network. It uses the [pihole/pihole](https://hub.docker.com/r/pihole/pihole) docker image.
 
+# Getting Started
 
-# Secrets and Login to web interface
+# #Secrets and Login to web interface
 
-The password to the pihole web interface is stored with a docker secret, so you will have to set that up. 
+The password to the PiHole web interface is stored with a docker secret, so you will have to set that up. 
 
-To set up your machine for a secret use the commands: 
-```
-docker swarm init
-```
-This will make your machine a docker swarm manager, which allows it to store secrets.
+Create a file called `pihole_password.txt` in the `docker` directory with the password you want inside of it.
 
-Now you can set the Docker secret password with :
+Even when running in swarm mode Docker will store any secrets as plain text in a file somewhere, so this is assuming
+that your machine is secure and nobody can see this file.
 
-```
-echo "SuperSecurePassword" | docker secret create pihole_password -
-```
+This file is ignored by the git ignore, so no worries there!
 
-Replacing the `SuperSecurePassword` with your password.
+# UFW and firewall settings
 
-You can use `docker secret ls` to list all the secrets on your machine. Neat!
+
+
+# Tell the clients to use this as DNS instead of the default
+
+Set the router's default DNS server to be the address of the machine running PiHole

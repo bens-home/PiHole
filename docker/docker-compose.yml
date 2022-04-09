@@ -1,11 +1,11 @@
-version: "3"
+version: "3.1"
 
 # Setting external to true will tell this compose file that the secret is from 
 # the existing secrets on the machine, and error out if we try to start without
 # setting it
 secrets:
   pihole_password:
-    external: true
+    file: ./pihole_password.txt
 
 # More info at https://github.com/pi-hole/docker-pi-hole/ and https://docs.pi-hole.net/
 services:
