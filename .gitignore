@@ -1,3 +1,7 @@
-# Ignore all folders starting with "etc"
-.etc*/
+# Ignore all folders starting with "etc" This doesn't work? 
+etc*/
 */etc*/
+
+# Explictly ignore the generated pihole folders in case i messed up the above ignore lmao
+etc-dnsmasq.d/
+etc-pihole/
