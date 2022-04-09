@@ -7,3 +7,4 @@ etc-dnsmasq.d/
 etc-pihole/
 
 pihole_password.txt
+.env
