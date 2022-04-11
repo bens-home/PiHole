@@ -52,9 +52,14 @@ docker-compose up -d
 
 To use the web interface from other computers you need to allow port 80 through the firewall
 
+These rules come from the official [PiHole documentation](https://docs.pi-hole.net/main/prerequisites/)
 ```
-sudo ufw allow 80
-sudo ufw allow 53
+sudo ufw allow 80/tcp
+sudo ufw allow 53/tcp
+sudo ufw allow 53/udp
+sudo ufw allow 67/tcp
+sudo ufw allow 67/udp
+
 sudo ufw reload
 ```
 
