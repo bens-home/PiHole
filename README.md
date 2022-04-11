@@ -54,11 +54,11 @@ To use the web interface from other computers you need to allow port 80 through 
 
 These rules come from the official [PiHole documentation](https://docs.pi-hole.net/main/prerequisites/)
 ```
-sudo ufw allow 80/tcp
-sudo ufw allow 53/tcp
-sudo ufw allow 53/udp
-sudo ufw allow 67/tcp
-sudo ufw allow 67/udp
+sudo ufw allow 80/tcp comment "For PiHole web interface"
+sudo ufw allow 53/tcp comment "For PiHole DNS"
+sudo ufw allow 53/udp comment "For PiHole DNS"
+sudo ufw allow 67/tcp comment "For PiHole DNS"
+sudo ufw allow 67/udp comment "For PiHole DNS"
 
 sudo ufw reload
 ```
