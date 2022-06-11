@@ -70,3 +70,8 @@ Go to `http://Ip.Of.Host.Machine/admin/index.php` to get to your admin page to m
 # Tell the clients to use this as DNS instead of the default
 
 Now to make the devices on your network use this as the dns, set it as your DNS server on your router!
+
+
+# Updating PiHole
+
+Updating PiHole can be weird. You might need to enable `systemd-resolved.service` on your host machine after you shut down the PiHole docker image to make sure that you can actually resolve the address to the docker images. 
